@@ -3,3 +3,9 @@
 
 # dotenv environment variables file
 .env
+
+# key
+*.key
+
+# sql
+*.sql

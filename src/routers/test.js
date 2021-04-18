@@ -1,8 +1,8 @@
-const router = require("koa-router");
+const Router = require("koa-router");
 
 const test = require("../services/test");
 
-const route = new router();
+const route = new Router();
 
 route.get("/test", async (ctx, next) => {
   const res = await test();

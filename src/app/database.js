@@ -15,15 +15,16 @@ const conn = mysql.createPool({
   database: MYSQL_DATABASE,
   user: MYSQL_USER,
   password: MYSQL_PASSWORD,
+  connectionLimit: 10,
 });
 
 // 判断连接是否成功
-conn.getConnection((err, conn) => {
-  conn.connect((err) => {
+conn.getConnection( (err, conn) => {
+  conn.connect( (err) => {
     if (err) {
-      console.log("database connection make an error");
+      console.log("数据库连接失败：", err);
     } else {
-      console.log("database connect successfully");
+      console.log("数据库连接成功");
     }
   });
 });
